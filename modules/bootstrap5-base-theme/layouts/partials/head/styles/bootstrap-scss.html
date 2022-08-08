@@ -1,5 +1,5 @@
 {{/* partial "head/styles/bootstrap-scss" . */}}
-{{ $sass := resources.Get "bootstrap.scss" }}
+{{ $sass := resources.Get "scss/bootstrap/bootstrap.scss" }}
 {{ $style := $sass | resources.ToCSS }}
 
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
