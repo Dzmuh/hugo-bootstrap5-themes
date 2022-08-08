@@ -1,0 +1,14 @@
+name = "bootstrap-v5-base-theme"
+license = "MIT"
+licenselink = "https://github.com/Dzmuh/hugo-bootstrap5-themes/blob/main/LICENSE"
+description = "bootstrap v5 base-theme for Hugo"
+homepage = "https://github.com/Dzmuh/hugo-bootstrap-v5"
+tags = ["multilingual",
+        "bootstrap-v5"
+       ]
+features = ["multilingual"]
+min_version = "0.41"
+
+[author]
+  name = "dzmuh"
+  homepage = "https://github.com/dzmuh/"
