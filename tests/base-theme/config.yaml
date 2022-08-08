@@ -5,8 +5,10 @@ defaultContentLanguageInSubdir: true
 
 title: "Bootstrap v5 theme for Hugo"
 
-#theme:      "hugo-bootstrap5-theme"
-#themesdir:  "../.."
+module:
+  imports:
+    - path: github.com/Dzmuh/hugo-bootstrap5-themes/modules/bootstrap5-scss/v5
+    - path: github.com/Dzmuh/hugo-bootstrap5-themes/modules/bootstrap5-base-theme/v5
 
 enableInlineShortcodes: true
 

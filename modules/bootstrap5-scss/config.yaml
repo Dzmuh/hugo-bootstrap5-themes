@@ -1,0 +1,18 @@
+module:
+  hugoVersion:
+    min: '0.95.0'
+    extended: true
+  mounts:
+    # Workaround for https://github.com/gohugoio/hugo/issues/6945
+    - source: assets/scss/bootstrap/_vendor
+      target: assets/scss/bootstrap/vendor
+    - source: assets
+      target: assets
+  imports:
+    - path: github.com/twbs/bootstrap
+      mounts:
+        - source: scss
+          target: assets/scss/bootstrap
+        - source: js
+          target: assets/js/bootstrap
+    - path: github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2

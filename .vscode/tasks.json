@@ -18,6 +18,22 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Run Hugo server with Bootstrap v5 SCSS module",
+            "type": "shell",
+            "windows": {
+                "command": "hugo server --source \"tests/scss-module\" --watch -D --disableFastRender"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
         }
     ]
 }

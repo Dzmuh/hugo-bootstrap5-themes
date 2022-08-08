@@ -1,0 +1,17 @@
+baseURL: "/"
+disableKinds:
+  - page
+  - section
+  - taxonomy
+  - term
+
+outputs:
+  home:
+    - HTML
+
+module:
+  hugoVersion:
+    min: '0.95.0'
+    extended: true
+  imports:
+    - path: github.com/Dzmuh/hugo-bootstrap5-themes/modules/bootstrap5-scss
