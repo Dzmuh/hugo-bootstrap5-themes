@@ -1,0 +1,62 @@
+baseURL: "/"
+
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: true
+
+title: "Bootstrap v5 theme for Hugo"
+
+#theme:      "hugo-bootstrap5-theme"
+#themesdir:  "../.."
+
+enableInlineShortcodes: true
+
+# Needed for mermaid/katex shortcodes
+markup:
+  goldmark:
+    renderer:
+      unsafe:           true
+  tableOfContents:
+    startLevel:         1
+    endLevel:           6
+
+buildDrafts:        true
+buildFuture:        true
+
+#pygmentsCodeFences = true
+#pygmentsStyle = "monokailight"
+
+params:
+  description:          "Theme for Hugo based  Bootstrap v5 - the most popular HTML, CSS, and JS library in the world."
+  author:               "Fralkou Ilya A. (aka Dzmuh)"
+  twitter:              "Dzmuh"
+  github:               "Dzmuh"
+
+taxonomies:
+  category: "categories"
+  tag:       "tags"
+
+# Multi-lingual mode config
+# There are different options to translate files
+# See https://gohugo.io/content-management/multilingual/#translation-by-filename
+# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+languages:
+  en:
+    languageCode: "en"        # http://www.lingoes.net/en/translator/langcode.htm
+    languageName: English
+    weight: 0
+    GoogleSiteSearchLangCode: "en"
+  pl:
+    languageCode: "pl"        # http://www.lingoes.net/en/translator/langcode.htm
+    languageName: Polish
+    weight: 1
+    GoogleSiteSearchLangCode: "pl"
+  by:
+    languageCode: "be"        # http://www.lingoes.net/en/translator/langcode.htm
+    languageName: "Беларуская"
+    weight: 2
+    GoogleSiteSearchLangCode: "by"
+  ru:
+    languageCode: "ru"        # http://www.lingoes.net/en/translator/langcode.htm
+    languageName: Russian
+    weight: 3
+    GoogleSiteSearchLangCode: "ru"

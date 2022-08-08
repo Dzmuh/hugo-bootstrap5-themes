@@ -1,0 +1,8 @@
+{{/* {{< columns >}} <---> {{< /columns >}} */}}
+<div class="d-flex">
+    {{ range split .Inner "<--->" }}
+    <div class="p-2 flex-fill">
+        {{ . | markdownify }}
+    </div>
+    {{ end }}
+</div>

@@ -1,0 +1,20 @@
+{{/* partial "head/styles/docs" . */}}
+{{/*
+    Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website
+
+    {{- $styles := resources.Get "docs.scss" | resources.ExecuteAsTemplate "docs.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+
+    {{- $styles := resources.Get "style.scss" | resources.ExecuteAsTemplate "style.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+
+*/}}
+{{/*- $targetDocsCssPath := printf "/css/docs.css" -}}
+{{- $sassOptions := dict "targetPath" $targetDocsCssPath "precision" 6 -}}
+{{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
+
+{{- $style := resources.Get "/assets/docs.scss" | toCSS $sassOptions | postCSS $postcssOptions */}}
+
+{{ $sass := resources.Get "docs.scss" }}
+{{ $style := $sass | resources.ToCSS }}
+
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ with $.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
+    <head>
+        {{ template "head" . }}
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <main class="my-auto p-5" id="content">
+        {{ .Content }}
+        </main>
+    {{- template "footer" . -}}
+    </body>
+</html>
+
+{{- define "head" -}}
+    {{ partial "head/default" . }}
+{{- end -}}
+
+{{- define "footer" -}}
+    {{ partial "footer/default" . }}
+{{- end -}}

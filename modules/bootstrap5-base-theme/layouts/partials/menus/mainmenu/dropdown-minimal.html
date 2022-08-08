@@ -1,0 +1,13 @@
+{{/* {{ partial "menus/mainmenu/dropdown-minimal" . }} */}}
+{{- $currentPage := . -}}
+{{- range .Site.Menus.main -}}
+
+        {{- if ne .Identifier "home" -}}
+            <li class="nav-item {{if  eq $currentPage.Section .Identifier }}active{{end}}">
+                <a href="{{ .URL | relLangURL }}" class="nav-link" aria-current="page">
+                {{- .Name -}}
+                </a>
+            </li>
+        {{- end -}}
+
+{{- end -}}

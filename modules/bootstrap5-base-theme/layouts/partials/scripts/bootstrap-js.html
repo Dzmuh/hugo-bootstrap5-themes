@@ -1,0 +1,7 @@
+{{/* partial "scripts/bootstrap-js" . */}}
+{{ $jqueryJs := resources.Get "jquery/dist/jquery.js" -}}
+{{ $bootstrapJs := resources.Get "bootstrap/dist/js/bootstrap.js" -}}
+
+{{ $js := slice $jqueryJs $bootstrapJs | resources.Concat "js/bundle.js" -}}
+
+<script src="{{ $js.RelPermalink }}"></script>

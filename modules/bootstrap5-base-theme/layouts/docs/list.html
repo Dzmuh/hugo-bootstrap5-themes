@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container-xxl my-4 bd-layout">
+    <div class="bd-sidebar">
+        {{ partial "menus/filetree/docs-sidebar" . -}}
+    </div>
+
+    <div class="bd-intro pt-md-3 pl-lg-4">
+        <h1 class="bd-title" id="content">{{ .Title | markdownify }}</h1>
+        <p class="bd-lead">{{ .Page.Params.Description | markdownify }}</p>
+    </div>
+
+    <main class="bd-content order-1 pl-lg-4">
+        {{ .Content }}
+    </main>
+</div>
+{{- end -}}
+{{- define "styles" -}}
+    {{ partial "head/styles" . -}}
+    {{ partial "head/styles/docs" . -}}
+{{- end -}}

@@ -1,0 +1,13 @@
+{{/* {{ partial "menus/translations/dropdown" . }} */}}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="TranslationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{- $.Site.Language.LanguageName -}}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="TranslationsDropdown">
+        {{- range $.Site.Home.AllTranslations -}}
+            <a class="dropdown-item" href="{{ .Permalink }}">
+                {{- .Language.LanguageName -}}
+            </a>
+        {{- end -}}
+    </div>
+</li>
