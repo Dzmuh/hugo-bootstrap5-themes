@@ -78,6 +78,24 @@ Or only what you need:
 @import "bootstrap/utilities/api";
 ```
 
+### CSS
+
+```html
+<link rel="stylesheet" href="/dist/bootstrap/css/bootstrap.css">
+```
+
+```html
+<link rel="stylesheet" href="/dist/bootstrap/css/bootstrap.min.css">
+```
+
 ### JavaScript
 
 See the [Example Site](./tests/scss-module/).
+
+```html
+<script src="/dist/bootstrap/js/bootstrap.js"></script>
+```
+
+```html
+<script src="/dist/bootstrap/js/bootstrap.bundle.js"></script>
+```

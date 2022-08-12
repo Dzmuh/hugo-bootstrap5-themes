@@ -1,7 +1,12 @@
-{{/* partial "scripts/bootstrap-js" . */}}
-{{ $jqueryJs := resources.Get "jquery/dist/jquery.js" -}}
-{{ $bootstrapJs := resources.Get "bootstrap/dist/js/bootstrap.js" -}}
-
-{{ $js := slice $jqueryJs $bootstrapJs | resources.Concat "js/bundle.js" -}}
+{{- /* partial "scripts/bootstrap-js" . */ -}}
+{{/* Load Bootstrap JS. */}}
+{{ $js := resources.Get "dist/bootstrap/js/bootstrap.js" -}}
+{{ $params := dict -}}
+{{ $sourceMap := cond hugo.IsProduction "" "inline" -}}
+{{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params -}}
+{{ $js = $js | js.Build $opts -}}
+{{ if hugo.IsProduction -}}
+{{ $js = $js | fingerprint -}}
+{{- end -}}
 
 <script src="{{ $js.RelPermalink }}"></script>
