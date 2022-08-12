@@ -76,5 +76,6 @@ typings/
 .cache
 
 # Hugo files
-resources/_gen/
 .hugo_build.lock
+resources/_gen/
+tests/base-theme/resources/_gen/
