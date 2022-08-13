@@ -2,7 +2,7 @@
 {{/*
     TODO: <html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#"></html>
 */}}
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ with $.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}" {{ with .Page.Params.html_class }} class="{{ . }}"{{ end }}>
     <head>
         {{/* На странице можно использовать переменные: https://gohugo.io/variables/page/ */}}
         {{- template "charset" . }}
@@ -32,21 +32,21 @@
 </body>
 </html>
 {{- define "charset" }}
-<meta charset="utf-8">
+    <meta charset="utf-8">
 {{- end -}}
 
 {{- define "viewport" }}
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 {{- end -}}
 
 {{- define "title" }}
-<title>
-    {{- if .IsHome -}}
+    <title>
+    {{ if .IsHome -}}
         {{ .Site.Title | markdownify }} · {{ .Site.Params.description | markdownify }}
     {{- else -}}
         {{ .Title | markdownify }} · {{ .Site.Title | markdownify }}
     {{- end -}}
-</title>
+    </title>
 {{- end -}}
 
 {{- define "description" -}}
@@ -70,17 +70,11 @@
 {{- end -}}
 
 {{- define "header" -}}
-<header>
-{{ partial "menus/mainmenu/default" . }}
-</header>
+    {{ partial "menus/mainmenu/default" . }}
 {{- end -}}
 
 {{- define "main" -}}
-<main class="bd-content py-5" id="content">
-    <div class="container">
-        {{- .Content -}}
-    </div>
-</main>
+    {{- .Content -}}
 {{- end -}}
 
 {{- define "footer" -}}

@@ -1,1 +1,34 @@
-{{ define "dummy" }}{{ end }}
+{{- define "header" -}}
+    {{ partial "menus/mainmenu/default" . }}
+    {{ if eq .Page.Params.header.active true }}
+    <header class="py-5 border-bottom">
+        <div class="container-xxl bd-gutter pt-md-1 pb-md-4">
+            <div class="row">
+                <div class="col-xl-8">
+                    <h1 class="bd-title mt-0">
+                        {{- if .Page.Params.header.title -}}
+                            {{ .Page.Params.header.title | markdownify }}
+                        {{- else -}}
+                            {{ .Title | markdownify }}
+                        {{- end -}}
+                    </h1>
+                    <p class="bd-lead">
+                        {{- if .Page.Params.header.description }}
+                            {{ .Page.Params.header.description | markdownify }}
+                        {{- else -}}
+                            {{ .Page.Params.Description | markdownify }}
+                        {{- end -}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    {{ end }}
+{{- end -}}
+{{ define "main" }}
+    <main class="bd-content order-1 py-5" id="content">
+        <div class="container-xxl bd-gutter">
+            {{ .Content }}
+        </div>
+    </main>
+{{ end }}

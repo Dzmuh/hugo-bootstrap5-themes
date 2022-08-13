@@ -1,6 +1,8 @@
 {{/* partial "head/styles/bootstrap-css" . */}}
 {{ if eq hugo.Environment "production" -}}
-<link href="/dist/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    {{ $css := resources.Get "dist/bootstrap/css/bootstrap.min.css" -}}
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet">
 {{- else -}}
-<link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    {{ $css := resources.Get "dist/bootstrap/css/bootstrap.css" -}}
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet">
 {{- end }}
