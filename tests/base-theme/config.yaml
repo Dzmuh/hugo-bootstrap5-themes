@@ -40,7 +40,7 @@ taxonomies:
 menus:
   main:
     - name: Home
-      url: '#about'
+      url: '/'
       weight: 10
     - name: Posts
       url: '#posts'
@@ -48,15 +48,9 @@ menus:
     - name: Projects
       url: '#projects'
       weight: 30
-    - name: Talks
-      url: '#talks'
+    - name: Examples
+      url: /examples/
       weight: 40
-    - name: Publications
-      url: '#featured'
-      weight: 50
-    - name: Contact
-      url: '#contact'
-      weight: 60
 
 # Multi-lingual mode config
 # There are different options to translate files
