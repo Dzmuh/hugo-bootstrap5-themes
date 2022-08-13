@@ -18,7 +18,7 @@
         {{- template "description" . }}
         {{- template "opengraph" . }}
         {{- template "twittercard" . }}
-        {{- template "icons" . }}
+        {{- template "favicons" . }}
         {{- template "styles" . }}
     </head>
 {{ block "body_override" . }}<body>{{ end }}
@@ -65,8 +65,8 @@
     {{ partial "head/styles" . }}
 {{- end -}}
 
-{{- define "icons" -}}
-    {{ partial "head/icons" . -}}
+{{- define "favicons" -}}
+    {{ partial "head/favicons" . -}}
 {{- end -}}
 
 {{- define "header" -}}
