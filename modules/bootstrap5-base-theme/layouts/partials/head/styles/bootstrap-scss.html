@@ -1,5 +1,12 @@
 {{/* partial "head/styles/bootstrap-scss" . */}}
 {{ $sass := resources.Get "scss/bootstrap/bootstrap.scss" -}}
-{{ $style := $sass | resources.ToCSS -}}
+{{ $targetCssPath := "css/bootstrap.css" -}}
+{{ $sassOptions := dict "targetPath" $targetCssPath "outputStyle" "expanded" "precision" 6 -}}
 
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ if eq hugo.Environment "production" -}}
+    {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}
+{{ end -}}
+
+{{ $style := $sass | toCSS $sassOptions -}}
+
+    <link href="{{ $style.Permalink | relURL }}" rel="stylesheet">
